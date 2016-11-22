@@ -2,7 +2,7 @@
 \alias{TwoMeanComparison}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Comparison of two sample means  
+Comparison of two sample means
 }
 \description{
 Morrison(2005) says that many times two observations coming from a multidimensional variate and have been obtained under different conditions, a multinormal distribution is assumed with the same although unknown covariance matrix and it is desire to test the hypothesis of same mean vectors. The procedure uses the T square of Hotelling and presents a confidence interval.
@@ -45,7 +45,7 @@ the significance level (0.05 by default)
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~

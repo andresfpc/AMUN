@@ -2,7 +2,7 @@
 \alias{Ind2Variates}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Independence of k Sets of Varieties 
+Independence of k Sets of Varieties
 }
 \description{
 When the matrices of covaraince and correlation have been partitioned according with the population matrix it is recommended to use the Wilk's test but since is quite complicated there is an approximation to a Chi-square, all the above can be seen in Morrison(2005)
@@ -39,7 +39,7 @@ the total number of observations cover by the S matrix
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~
@@ -56,17 +56,17 @@ Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (S, S11, S22, n) 
+function (S, S11, S22, n)
 {
     V <- (det(S))/(det(S11) * (det(S22)))
     Sigma_3 <- (nrow(S11) + nrow(S22))^3 - ((nrow(S11)^3 + (nrow(S22)^3)))
     Sigma_2 <- (nrow(S11) + nrow(S22))^2 - ((nrow(S11)^2 + (nrow(S22)^2)))
     f <- (1/2) * Sigma_2
-    invC <- 1 - (1/((12 * f) * (n - 1))) * (2 * Sigma_3 + 3 * 
+    invC <- 1 - (1/((12 * f) * (n - 1))) * (2 * Sigma_3 + 3 *
         Sigma_2)
     chi <- (-((n - 1) * invC) * log(V))
     pvalue <- pchisq(chi, f)
-    Ind2Variates <- list(ChiSquareStatistic = chi, DegreesOfFreedom = f, 
+    Ind2Variates <- list(ChiSquareStatistic = chi, DegreesOfFreedom = f,
         `p-value` = pvalue)
     return(Ind2Variates)
   }

@@ -2,10 +2,10 @@
 \alias{TSP}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Test for Two Special Patterns 
+Test for Two Special Patterns
 }
 \description{
-Morrison(2005) says that equal-covariance patterns was sufficient for the validity of the repeated-measurements equal mean tests so he present an test to prove the hypothesis of those multinormal covariance models.  
+Morrison(2005) says that equal-covariance patterns was sufficient for the validity of the repeated-measurements equal mean tests so he present an test to prove the hypothesis of those multinormal covariance models.
 }
 \usage{
 TSP(X)
@@ -30,7 +30,7 @@ a data matrix of repeated-measurements
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York
 }
 \author{
-Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~
@@ -47,7 +47,7 @@ Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (X) 
+function (X)
 {
     S <- var(X)
     n <- nrow(X)
@@ -56,9 +56,9 @@ function (X)
     s2 <- sum(diag(S))
     Smd <- S - diag(S)
     S2r <- sum(colSums(Smd))
-    L <- (det(S)/((s2^p) * ((1 - r)^(p - 1)) * (1 + ((p - 1) * 
+    L <- (det(S)/((s2^p) * ((1 - r)^(p - 1)) * (1 + ((p - 1) *
         r))))
-    chi <- -(n - (((p * (p + 1)^2) * (2 * p - 3))/(6 * (p - 1) * 
+    chi <- -(n - (((p * (p + 1)^2) * (2 * p - 3))/(6 * (p - 1) *
         (p^2 * p - 4))))
     df <- (1/2) * p * (p + 1)
     pvalue <- pchisq(q = chi, df = df)

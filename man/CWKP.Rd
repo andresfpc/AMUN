@@ -5,7 +5,7 @@
 Classification with Known Parameters
 }
 \description{
-Morrison (2005) presents two cases for classification when the parameters are known, the first case of classification is treated as a multinormal population with known parameters so the discriminate function is develop using likelihood-radio and also the concept of  the misclassification probabilities is used and in the second case the multinormal Bayes model of minimum expected loss is used. 
+Morrison (2005) presents two cases for classification when the parameters are known, the first case of classification is treated as a multinormal population with known parameters so the discriminate function is develop using likelihood-radio and also the concept of  the misclassification probabilities is used and in the second case the multinormal Bayes model of minimum expected loss is used.
 }
 \usage{
 CWKP(x1, x2, h, l12, l21)
@@ -22,10 +22,10 @@ a data array of all observation in group 2
 the a priori probability of misclassification
 }
   \item{l12}{
-the loss funtion when classifiying an observation from the 2nd population in the 1st population
+the loss function when classifiying an observation from the 2nd population in the 1st population
 }
   \item{l21}{
-the loss funtion when classifiying an observation from the 1st population in the 2nd population
+the loss function when classifiying an observation from the 1st population in the 2nd population
 }
 }
 \details{
@@ -59,12 +59,12 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (x1, x2, h, l12, l21) 
+function (x1, x2, h, l12, l21)
 {
     x <- mu1 <- colMeans(x1)
     mu2 <- colMeans(x2)
     Sigma <- var(x1, x2)
-    lamnda <- exp((t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x) - ((1/2) * 
+    lamnda <- exp((t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x) - ((1/2) *
         (t(mu1 - mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2))))
     lx <- lenght(x)
     clasn <- rep(NA, lx)
@@ -75,14 +75,14 @@ function (x1, x2, h, l12, l21)
     delta <- t(mu1 - mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2)
     sqdelta <- sqrt(delta)
     mcp <- pnorm(q = (-1/2) * sqdelta)
-    ba <- t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x - ((1/2) * (t(mu1 - 
+    ba <- t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x - ((1/2) * (t(mu1 -
         mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2)))
     loss <- ((1 - h) * l12)/(h * l21)
     clasb <- rep(NA, lx)
     clasb[ba > loss] <- "g1"
     clasb[ba < loss] <- "g2"
     clasb
-    return(list(`Classification bylikelihood ratio` = clasn, 
+    return(list(`Classification bylikelihood ratio` = clasn,
         `Misclassification probability` = mcp, `Classification by Bayes` = clasb))
   }
 }

@@ -2,10 +2,10 @@
 \alias{RMA}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Repeated Measurements Analysis 
+Repeated Measurements Analysis
 }
 \description{
-According to Morrison(2005) who describes in his book, many times obsevations are coleccted at different time on the same experimental unit and then it is reasonable that the treatment has an additive effect. 
+According to Morrison(2005) who describes in his book, many times obsevations are coleccted at different time on the same experimental unit and then it is reasonable that the treatment has an additive effect.
 }
 \usage{
 RMA(dat)
@@ -27,9 +27,7 @@ a matrix with n mesurements witch are written in the columns, an in the rows the
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores;
-Andres Felipe Palacios Clavijo;
-Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~
@@ -46,7 +44,7 @@ Campo Elias Pardo
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (dat) 
+function (dat)
 {
     n <- nrow(dat)
     d <- dat[, 1] - dat[, 2]

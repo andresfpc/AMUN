@@ -5,7 +5,7 @@
 Discriminant Analysis
 }
 \description{
-Sometimes it is required to assign an individual in one of many groups, to do that there consider the classification rule based on an index called lineal discriminate function, where different means but same covariance matrix are reasonable to assume. This program computes the discriminate scores, the classification table and finally the wrong classification percentage
+Sometimes it is required to assign an individual in one of many groups, to do that there consider the classification rule based on an index called lineal discriminate function, where different means but same covariance matrix are reasonable to assume (Morrison, 2005). This program computes the discriminate scores, the classification table and finally the wrong classification percentage
 }
 \usage{
 DiscAnalysis(X)
@@ -13,7 +13,7 @@ DiscAnalysis(X)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{X}{
-a data matrix which last column must be the classification column  
+a data matrix which last column must be the classification column
 }
 }
 \details{
@@ -30,9 +30,7 @@ a data matrix which last column must be the classification column
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores;
-Andres Felipe Palacios Clavijo;
-Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~
@@ -49,7 +47,7 @@ Campo Elias Pardo
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function (X) 
+function (X)
 {
     l <- ncol(X)
     X <- data.frame(X)
@@ -66,7 +64,7 @@ function (X)
     ng2 <- nrow(g2)
     vg1 <- var(g1)
     vg2 <- var(g2)
-    S <- (1/(ng1 + ng2 + -2)) * (((ng1 - 1) * vg1) + ((ng2 - 
+    S <- (1/(ng1 + ng2 + -2)) * (((ng1 - 1) * vg1) + ((ng2 -
         1) * vg2))
     a12 <- solve(S) \%*\% (m1 - m2)
     y12m <- ((m1 + m2) \%*\% solve(S) \%*\% (m1 - m2))/2
@@ -77,7 +75,7 @@ function (X)
     clas[W12 < 0] <- 2
     classTable <- table(clas, sp)
     wc <- (classTable[1, 2] + classTable[2, 1])/lx
-    DiscAnalysis <- list(Score = a12, ClassificationTable = classTable, 
+    DiscAnalysis <- list(Score = a12, ClassificationTable = classTable,
         WrongClassificationPerc = wc)
   }
 }

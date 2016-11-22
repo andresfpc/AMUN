@@ -2,7 +2,7 @@
 \alias{SingleCovComp}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Test of hypothesis over a single covariance matrix 
+Test of hypothesis over a single covariance matrix
 }
 \description{
 The following function provides a useful computation to contrast a single covariance matrix against to an already set covariance matrix as in Simar(2007)
@@ -36,13 +36,10 @@ level of significance
 %% ...
 }
 \references{
-Hardle, W. & Simar, L. (2007), Applied Multivariate Statistical Analysis,
-Springer, New York.
+Hardle, W. & Simar, L. (2007), Applied Multivariate Statistical Analysis, Springer, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores;
-Andres Felipe Palacios Clavijo;
-Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~
@@ -54,25 +51,17 @@ Campo Elias Pardo
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+Sigma_0 <- matrix(c( 4, 3, 2,
+                     3, 6, 5,
+                     2, 5, 10), nrow = 3, byrow = TRUE)
 
-## The function is currently defined as
-function (Sigma_0, Sigma, n, alpha = 0.05) 
-{
-    p <- nrow(Sigma)
-    df <- (1/2) * p * (p + 1)
-    Sigmahat <- ((n - 1)/n) * Sigma
-    prodSigma <- solve(Sigma_0) \%*\% Sigmahat
-    estTest <- n * mTrace(prodSigma) - n * log(det(prodSigma)) - 
-        n * p
-    chi2 <- qchisq(p = 1 - alpha, df = df, lower.tail = F)
-    pValue <- pchisq(q = estTest, df = df, lower.tail = F)
-    SingleCovComp <- list(`-2logLambda` = estTest, df = df, chi2 = chi2, 
-        pValue = pValue)
-    return(SingleCovComp)
-  }
+Sigma <- matrix(c( 3.42, 2.60, 1.89,
+                     2.60, 8.00, 6.51,
+                     1.89, 6.51, 9.62), nrow = 3, byrow = TRUE)
+
+n <- 20
+
+SingleCovComp(Sigma_0 = Sigma_0, Sigma = Sigma, n = n)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

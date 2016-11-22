@@ -33,7 +33,7 @@ default arguments of print method
 
 }
 \author{
-Jesus Miguel Gonzalez Flores; Andres Felipe Palacios Clavijo; Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~

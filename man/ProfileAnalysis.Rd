@@ -5,7 +5,7 @@
 Profile Analysis for Two Independent Group
 }
 \description{
-These function does the profile analysis in the three steps describe by Morrison(2005), it first starts by doing a plot, it follows a test to check parallelism, in case the null hypothesis of parallelism is not rejected then a level and a horizontal test are applied. 
+These function does the profile analysis in the three steps describe by Morrison(2005), it first starts by doing a plot, it follows a test to check parallelism, in case the null hypothesis of parallelism is not rejected then a level and a horizontal test are applied.
 }
 \usage{
 ProfileAnalysis(dat1, dat2, C, alpha = 0.05)
@@ -19,7 +19,7 @@ A numeric matrix containing the values of the first group
 A numeric matrix containing the values of the second group
 }
   \item{C}{
-A numeric (p-1)*p patterned matrix 
+A numeric \eqn{(p-1)x p} patterned matrix
 }
   \item{alpha}{
 The significance level of the test
@@ -39,9 +39,7 @@ The significance level of the test
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.
 }
 \author{
-Jesus Miguel Gonzalez Flores;
-Andres Felipe Palacios Clavijo;
-Campo Elias Pardo
+\packageAuthor{AMUN}
 }
 \note{
 %%  ~~further notes~~

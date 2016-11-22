@@ -13,8 +13,7 @@
 The DESCRIPTION file:
 \packageDESCRIPTION{AMUN}
 \packageIndices{AMUN}
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+
 }
 \author{
 \packageAuthor{AMUN}
