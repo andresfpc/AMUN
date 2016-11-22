@@ -1,0 +1,5 @@
+exportPattern("^[[:alpha:]]+")
+S3method("print","TMC")
+importFrom("graphics", "lines", "plot")
+importFrom("stats", "pchisq", "pf", "pnorm", "pt", "qchisq", "qf",
+             "qt", "sd", "var")
