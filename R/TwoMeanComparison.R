@@ -2,16 +2,6 @@
 # (Morrison, 2005) 2.4 The case of two samples
 ############################################################
 TwoMeanComparison <- function( xbar, ybar, nx, ny, S, alpha = 0.05 ) {
-   # Mean comparison for two independent sample with
-   # confidence intervals for each variable
-   # Args:
-   #  xbar: Mean vector of X group
-   #  ybar: Mean vector of Y group
-   #  nx: size of X group
-   #  ny: size of Y group
-   #  S: covariance matrix
-   #  alpha: significance level
-   #
    nxy <- nx + ny
    nVar <- length( xbar )
    varDif <- xbar - ybar

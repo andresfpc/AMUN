@@ -51,24 +51,23 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-data(infarto)
+xbar <- c(12.57, 9.57, 11.49, 7.97)
+ybar <- c(8.75, 5.33, 8.50, 4.75)
 
-ns <- as.vector( by( infarto[,-8], infarto[,8], nrow ) )
-means <- by( infarto[,-8], infarto[,8], colMeans )
-W <- by(infarto[,-8],infarto[,8], var )
-W1 <- ( ns[1]-1 ) * W$vive
-W2 <- ( ns[2]-1 ) * W$muere
-S <- ( W1 + W2 )/( sum( ns )-2 )
+nx <- 37
+ny <- 12
 
-mc <- TwoMeanComparison( means$vive, means$muere, ns[1], ns[2] , S, 0.05 )
+S <- matrix(c(11.2624, 9.4060, 7.1550, 3.3791,
+              9.4060, 13.5265, 7.3784, 2.5014,
+              7.1550, 7.3784, 11.5796, 2.6167,
+              3.3791, 2.5014, 2.6167, 5.8133),
+            nrow = 4, byrow = TRUE)
 
-mc
+TwoMeanComparison(xbar, ybar, nx, ny, S)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

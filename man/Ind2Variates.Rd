@@ -19,8 +19,8 @@ a positive define matrix which contains the whole variances and covariances
 a positive define matrix related which contains the variances and covariances of the first group
 }
   \item{S22}{
-
-}a positive define matrix related which contains the variances and covariances of the second group
+a positive define matrix related which contains the variances and covariances of the second group
+}
   \item{n}{
 the total number of observations cover by the S matrix
 }
@@ -51,25 +51,18 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty a
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+R <- matrix(c(1, 0.45, -0.19, 0.43,
+              0.45, 1, -0.02, 0.62,
+              -0.19, -0.02, 1, -0.29,
+              0.43, 0.62, -0.29, 1),
+            nrow = 4, byrow = TRUE)
 
-## The function is currently defined as
-function (S, S11, S22, n)
-{
-    V <- (det(S))/(det(S11) * (det(S22)))
-    Sigma_3 <- (nrow(S11) + nrow(S22))^3 - ((nrow(S11)^3 + (nrow(S22)^3)))
-    Sigma_2 <- (nrow(S11) + nrow(S22))^2 - ((nrow(S11)^2 + (nrow(S22)^2)))
-    f <- (1/2) * Sigma_2
-    invC <- 1 - (1/((12 * f) * (n - 1))) * (2 * Sigma_3 + 3 *
-        Sigma_2)
-    chi <- (-((n - 1) * invC) * log(V))
-    pvalue <- pchisq(chi, f)
-    Ind2Variates <- list(ChiSquareStatistic = chi, DegreesOfFreedom = f,
-        `p-value` = pvalue)
-    return(Ind2Variates)
-  }
+S11 <- R[1:2, 1:2]
+S12 <- R[1:2, 3:4]
+S22 <- R[3:4, 3:4]
+n <- 933
+
+Ind2Variates(S = R, S11 = S11, S22 = S22, n = n)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

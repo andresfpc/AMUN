@@ -8,15 +8,18 @@ Classification with Known Parameters
 Morrison (2005) presents two cases for classification when the parameters are known, the first case of classification is treated as a multinormal population with known parameters so the discriminate function is develop using likelihood-radio and also the concept of  the misclassification probabilities is used and in the second case the multinormal Bayes model of minimum expected loss is used.
 }
 \usage{
-CWKP(x1, x2, h, l12, l21)
+CWKP(mu1, mu2, Sigma, h, l12, l21)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x1}{
+  \item{mu1}{
 a data array of all observation in group 1
 }
-  \item{x2}{
+  \item{mu2}{
 a data array of all observation in group 2
+}
+   \item{Sigma}{
+a covariance matrix
 }
   \item{h}{
 the a priori probability of misclassification
@@ -54,37 +57,10 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+mu1 <- c(12.57, 9.57, 11.49, 7.97)
+mu2 <- c(8.75, 5.33, 8.50, 4.75)
 
-## The function is currently defined as
-function (x1, x2, h, l12, l21)
-{
-    x <- mu1 <- colMeans(x1)
-    mu2 <- colMeans(x2)
-    Sigma <- var(x1, x2)
-    lamnda <- exp((t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x) - ((1/2) *
-        (t(mu1 - mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2))))
-    lx <- lenght(x)
-    clasn <- rep(NA, lx)
-    clasn[lamnda > 0] <- "g1"
-    clasn[lamnda < 0] <- "g2"
-    clasn
-    table(clasn, infa.n[, 4])
-    delta <- t(mu1 - mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2)
-    sqdelta <- sqrt(delta)
-    mcp <- pnorm(q = (-1/2) * sqdelta)
-    ba <- t(mu1 - mu2) \%*\% solve(Sigma) \%*\% x - ((1/2) * (t(mu1 -
-        mu2) \%*\% solve(Sigma) \%*\% (mu1 - mu2)))
-    loss <- ((1 - h) * l12)/(h * l21)
-    clasb <- rep(NA, lx)
-    clasb[ba > loss] <- "g1"
-    clasb[ba < loss] <- "g2"
-    clasb
-    return(list(`Classification bylikelihood ratio` = clasn,
-        `Misclassification probability` = mcp, `Classification by Bayes` = clasb))
-  }
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

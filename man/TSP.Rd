@@ -8,12 +8,15 @@ Test for Two Special Patterns
 Morrison(2005) says that equal-covariance patterns was sufficient for the validity of the repeated-measurements equal mean tests so he present an test to prove the hypothesis of those multinormal covariance models.
 }
 \usage{
-TSP(X)
+TSP(S, n)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{X}{
-a data matrix of repeated-measurements
+   \item{S}{
+a data matrix of variances and covariances
+}
+   \item{n}{
+number of individuals
 }
 }
 \details{
@@ -42,28 +45,11 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty a
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+S <- matrix(c(2.2605, 2.1763, 1.6342,
+              2.1763, 2.6605, 1.8237,
+              1.6342, 1.8237, 2.4710), nrow = 3, byrow = TRUE)
 
-## The function is currently defined as
-function (X)
-{
-    S <- var(X)
-    n <- nrow(X)
-    r <- ncol(X)
-    p <- nrow(S)
-    s2 <- sum(diag(S))
-    Smd <- S - diag(S)
-    S2r <- sum(colSums(Smd))
-    L <- (det(S)/((s2^p) * ((1 - r)^(p - 1)) * (1 + ((p - 1) *
-        r))))
-    chi <- -(n - (((p * (p + 1)^2) * (2 * p - 3))/(6 * (p - 1) *
-        (p^2 * p - 4))))
-    df <- (1/2) * p * (p + 1)
-    pvalue <- pchisq(q = chi, df = df)
-    return(list(`Chi square statistic` = chi, `P value` = pvalue))
-  }
+TSP(S, n = 20)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
