@@ -13,7 +13,7 @@ RMA(dat)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{
-a matrix with n mesurements witch are written in the columns, an in the rows the repeted mesurements are written.
+a matrix with n measurements which are written in the columns, and in the rows the repeated measurements are written.
 }
 }
 \details{
@@ -39,22 +39,7 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (dat)
-{
-    n <- nrow(dat)
-    d <- dat[, 1] - dat[, 2]
-    dbar <- mean(d)
-    dsd <- sd(d)
-    tc <- (dbar/dsd) * sqrt(n)
-    tTheo <- pt(tc, df = n - 1, lower.tail = F)
-    RMA <- list(`p-value` = tTheo, tc)
-    return(RMA)
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

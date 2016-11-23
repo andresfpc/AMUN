@@ -57,10 +57,8 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-mu1 <- c(12.57, 9.57, 11.49, 7.97)
-mu2 <- c(8.75, 5.33, 8.50, 4.75)
-
-
+#mu1 <- c(12.57, 9.57, 11.49, 7.97)
+#mu2 <- c(8.75, 5.33, 8.50, 4.75)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

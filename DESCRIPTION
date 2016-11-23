@@ -3,9 +3,12 @@ Type: Package
 Title: Analisis Multivariado Universidad Nacional de Colombia (AMUN)
 Version: 0.1.0
 Date: 2016-11-23
-Author: Jesus Gonzalez <jmgonzalezf@unal.edu.co>, Andres Palacios <anfpalacioscl@unal.edu.co>, Campo Elias Pardo <cepardot@unal.edu.co>
+Author: Jesus Gonzalez <jmgonzalezf@unal.edu.co>, Andres Palacios
+    <anfpalacioscl@unal.edu.co>, Campo Elias Pardo <cepardot@unal.edu.co>
 Maintainer: Campo Elias Pardo <cepardot@unal.edu.co>
-Description: Herramientas utiles para el curso de Analisis Multivariado de la Universidad Nacional de Colombia.
+Description: Herramientas utiles para el curso de Analisis Multivariado de la
+    Universidad Nacional de Colombia.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: TRUE
+RoxygenNote: 5.0.1

@@ -9,9 +9,9 @@ Equality2Cov <- function(S, S1, S2, n1, n2) {
 	invC <- 1-(2*(p^2)+3*(p-1))/(6*(p+1)*(k-1))
 	chi <- M*invC
 	df <- (k-1)*(p)*(p+1)/2
-	pvalue <- 1-pchisq(chi, df)
+	pValue <- 1-pchisq(chi, df)
 
-	Equality2Cov <- list("ChiSquareStatistic" = chi,"DegreeOfFreedom" = df, "p-value"=pvalue)
+	Equality2Cov <- list("ChiSquareStatistic" = chi, "DegreeOfFreedom" = df, "pValue" = pValue)
 
 	return(Equality2Cov)
 }

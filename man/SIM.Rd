@@ -65,8 +65,8 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability 
 \examples{
 xbar <- c(55.24, 34.97)
 mu <- c(60, 30)
-a = c(1, 0)
-N = 100
+a <- c(1, 0)
+N <- 100
 S <- matrix(c(210.54, 126.99, 126.99, 119.68), nrow = 2, byrow = TRUE)
 
 SIM(xbar = xbar, a = a, mu = mu, N = N, S = S)

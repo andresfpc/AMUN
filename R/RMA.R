@@ -9,9 +9,9 @@ RMA <- function(dat) {
 	dbar <- mean(d)
 	dsd <- sd(d)
 	tc <- (dbar/dsd)*sqrt(n)
-	tTheo <- pt(tc, df = n-1, lower.tail = F)
-	
-	RMA <- list("p-value" = tTheo, tc) #P value in single analysis of Repeated measurements
+	pValue <- 1-pt(tc, df = n-1, lower.tail = F)
+
+	RMA <- list("tCalc" = tc, "pValue" = pValue) #P value in single analysis of Repeated measurements
 
 	return(RMA)
 }

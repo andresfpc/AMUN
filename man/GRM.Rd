@@ -57,9 +57,6 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty a
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-###########
-# Example 1
-###########
 x1 <- matrix(c(100.48, 100.22, 105.33, 103.43,
                94.9, 97.28, 97.25, 97.83,
                94.54, 96.86, 95.39, 97.15,

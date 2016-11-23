@@ -54,26 +54,17 @@ Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty a
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# Example 5.3 (Morrison, 2005)
+S_M <- matrix(c(4.32, 1.88,
+                1.88, 9.18), nrow = 2, byrow = TRUE)
 
-## The function is currently defined as
-function (S, S1, S2, n1, n2)
-{
-    M <- (n1 + n2 - 1) * log(det(S)) - (n1 - 1) * log(det(S1)) -
-        (n2 - 1) * log(det(S2))
-    p <- nrow(S)
-    k <- 2
-    invC <- 1 - (2 * (p^2) + 3 * (p - 1))/(6 * (p + 1) * (k -
-        1))
-    chi <- M * invC
-    df <- (k - 1) * (p) * (p + 1)/2
-    pvalue <- 1 - pchisq(chi, df)
-    Equality2Cov <- list(ChiSquareStatistic = chi, DegreeOfFreedom = df,
-        `p-value` = pvalue)
-    return(Equality2Cov)
-  }
+S_F <- matrix(c(2.52, 1.90,
+                1.90, 10.06), nrow = 2, byrow = TRUE)
+
+S <- matrix(c(3.42, 1.89,
+              1.89, 9.62), nrow = 2, byrow = TRUE)
+
+Equality2Cov(S = S, S1 = S_M, S2 = S_F, n1 = 32, n2 = 32)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
