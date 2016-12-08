@@ -5,7 +5,7 @@
 Simultaneous Inferences for Means
 }
 \description{
-When the T square of Hotelling happened to be significative it is wanted to know which responses led to the rejection of the null hypothesis. To test that Morrison (2005) talk about two approaches using either the union and intersection of the T square of Hotelling or the Bonferroni critical value.
+When the T square of Hotelling happened to be significative it is wanted to know which responses led to the rejection of the null hypothesis. To test that they are two approaches using either the union and intersection of the T square of Hotelling or the Bonferroni critical value (Morrison, 2005).
 }
 \usage{
 SIM(xbar, mu, a, N, S, alpha = 0.05, intervals = "default", m)
@@ -41,11 +41,7 @@ SIM(xbar, mu, a, N, S, alpha = 0.05, intervals = "default", m)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{SIM}{a data frame that contains the lower and the upper limit of the confidence interlval and the ax value}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.

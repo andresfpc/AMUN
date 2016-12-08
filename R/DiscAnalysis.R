@@ -23,9 +23,9 @@ DiscAnalysis <- function(X){
   clas[W12<0] <- 2
   classTable <- table(clas, sp)
   #porcentaje of wrong classification
-  wc <- (classTable[1,2]+classTable[2,1])/lx
+  misclass <- (classTable[1,2]+classTable[2,1])/lx
   
-  DiscAnalysis <- list("Score" = a12,"ClassificationTable" = classTable, "WrongClassificationPerc" = wc)
+  DiscAnalysis <- list("Score" = a12,"ClassificationTable" = classTable, "MisClassificationPerc" = misclass)
 
   return(DiscAnalysis)
 }

@@ -5,7 +5,7 @@
 Test for Two Special Patterns
 }
 \description{
-Morrison(2005) says that equal-covariance patterns was sufficient for the validity of the repeated-measurements equal mean tests so he present an test to prove the hypothesis of those multinormal covariance models.
+Equal-covariance patterns was sufficient for the validity of the repeated-measurements equal mean tests so he present an test to prove the hypothesis of those multinormal covariance models Morrison(2005).
 }
 \usage{
 TSP(S, n)
@@ -23,11 +23,8 @@ number of individuals
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{Chi square statistic}{the value of the computed Chi square statistic}
+\item{P value}{the P value fot the computed Chi square statistic}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York

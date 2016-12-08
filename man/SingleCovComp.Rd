@@ -5,7 +5,7 @@
 Test of hypothesis over a single covariance matrix
 }
 \description{
-The following function provides a useful computation to contrast a single covariance matrix against to an already set covariance matrix as in Simar(2007)
+The following function provides a useful computation to contrast a single covariance matrix against to an already set covariance matrix as in Simar(2007).
 }
 \usage{
 SingleCovComp(Sigma_0, Sigma, n, alpha = 0.05)
@@ -29,11 +29,10 @@ level of significance
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{LStatistic}{a value of the likelihood ratio estimator}
+\item{df}{total number of degrees of freedom for the likelihood ratio}
+\item{chi2}{the value of the Chi Square statistic for the likelihod radio}
+\item{pValue}{the p value of the Chi square statistic}
 }
 \references{
 Hardle, W. & Simar, L. (2007), Applied Multivariate Statistical Analysis, Springer, New York.

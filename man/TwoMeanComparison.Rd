@@ -5,7 +5,7 @@
 Comparison of two sample means
 }
 \description{
-Morrison(2005) says that many times two observations coming from a multidimensional variate and have been obtained under different conditions, a multinormal distribution is assumed with the same although unknown covariance matrix and it is desire to test the hypothesis of same mean vectors. The procedure uses the T square of Hotelling and presents a confidence interval.
+Many times two observations coming from a multidimensional variate and have been obtained under different conditions, a multinormal distribution is assumed with the same although unknown covariance matrix and it is desire to test the hypothesis of same mean vectors. The procedure uses the T square of Hotelling and presents a confidence interval Morrison (2005).
 }
 \usage{
 TwoMeanComparison(xbar, ybar, nx, ny, S, alpha = 0.05)
@@ -35,11 +35,9 @@ the significance level (0.05 by default)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{FCalc}{the value of the Computed F statistic }
+\item{FTheo}{the value of the Theoric F statistic}
+\item{IC}{a confidence interval}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.

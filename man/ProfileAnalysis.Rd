@@ -5,7 +5,7 @@
 Profile Analysis for Two Independent Group
 }
 \description{
-These function does the profile analysis in the three steps describe by Morrison(2005), it first starts by doing a plot, it follows a test to check parallelism, in case the null hypothesis of parallelism is not rejected then a level and a horizontal test are applied.
+The function does the profile analysis in the three steps test to check parallelism, in case the null hypothesis of parallelism is not rejected then a level and a horizontal test are applied (Morrison, 2005).
 }
 \usage{
 ProfileAnalysis(dat1, dat2, C, alpha = 0.05)
@@ -19,7 +19,7 @@ A numeric matrix containing the values of the first group
 A numeric matrix containing the values of the second group
 }
   \item{C}{
-A numeric \eqn{(p-1)x p} patterned matrix
+A numeric \eqn{(p-1)\times x p} patterned matrix (by default a contrast matrix)
 }
   \item{alpha}{
 The significance level of the test
@@ -29,11 +29,9 @@ The significance level of the test
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{ParallelismHypothesis_pValue}{a p value to contrats the hypothesis of parallelism}
+\item{TestSameLevel_pValue}{a p value to contrats the hypothesis of same level}
+\item{Directionality_pValue}{a p value to contrats the hypothesis of directionality}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probability and Statistics, 4 edn, McGraw-Hill, New York.

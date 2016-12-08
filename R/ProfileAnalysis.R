@@ -6,6 +6,10 @@ ProfileAnalysis <- function(dat1, dat2, C, alpha = 0.05 ) {
   if(ncol(dat1)!=ncol(dat2)){
     stop("Matrices must have the same column space\n")
   }
+  if(missing(C)) {
+    C <- matrix(c(1, -1, 0,
+              0, 1, -1), nrow = 2, byrow = TRUE)
+  }
     means1 <- colMeans(dat1)
     means2 <- colMeans(dat2)
     mi <- min(c(means1,means2))
@@ -25,7 +29,7 @@ ProfileAnalysis <- function(dat1, dat2, C, alpha = 0.05 ) {
     Fc <- ((n1+n2-p)/((n1+n2-2)*(p-1)))*T2
     pvalueph <- pf(Fc,p-1,n1+n2-p,lower.tail = F)
     if(pvalueph < alpha) {
-       return(list("P value of the Parallesim Hypothesis"=as.numeric(pvalueph), "Advice" = c( "The parallelism hypothesis had been rejected" ) ) )
+       return(list("P value of the Parallesim Hypothesis" = as.numeric(pvalueph), "Advice" = c("The parallelism hypothesis had been rejected")))
     } else {
       ## Same level
       j <- rep(1,length(means1))

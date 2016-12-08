@@ -5,7 +5,7 @@
 Groups of Repeated Measurements
 }
 \description{
-Morrison (2005) in his book says that most of the time data collated in repeated measurements consists of groups of repetition of the same response at different times under varying experimental conditions. So the procedure to follow is to test the equal mean response by using the T square of Hotelling and latter use individual mean differences by simultaneous test and confidence intervals. The multinormal model of 2p variables is assumed.
+Most of the time data collated in repeated measurements consists of groups of repetition of the same response at different times under varying experimental conditions. It tests the equal mean response by using the T square of Hotelling and uses simultaneous test and confidence intervals. The multinormal model of 2p variables is assumed.
 }
 \usage{
 GRM(x1, x2, N, S11, S22, S12)
@@ -35,11 +35,9 @@ a positive define matrix in the off-diagonal block of the covariance matrix part
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{FStatistic}{the value of the computed F statistic}
+\item{pValue}{the p value for the computed F statistic}
+\item{T2}{the value of the T square of Hotelling}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York

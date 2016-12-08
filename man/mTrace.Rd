@@ -20,11 +20,7 @@ a square matrix
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{mTrace}{the sum of the diagonal of the matrix}
 }
 \references{
 

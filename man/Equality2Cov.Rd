@@ -5,7 +5,7 @@
 Testing the Equality of several Covariance Matrices
 }
 \description{
-Morrison (2005) gives an approximation to test the null hypothesis of equality of covariance of a multinormal population, by doing a slight change over the likelihood-ratio statistic, which is good if p and k do not exceed four or five and each n_i is twenty or more.
+To test the null hypothesis of equality of covariance of a multinormal population, a slight change over the likelihood-ratio statistic is made, and it is recommended if p and k do not exceed four or five and each \eqn{n_i} is twenty or more (Morrison, 2005).
 }
 \usage{
 Equality2Cov(S, S1, S2, n1, n2)
@@ -32,11 +32,9 @@ the number of observations in the second group
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{ChiSquareStatistic}{the value of the Chi Square Statistic}
+\item{DegreeOfFreedom}{total normal of degrees of freedom of the Chi Square Statistic}
+\item{pValue}{the p value of the Chi square statistic}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York

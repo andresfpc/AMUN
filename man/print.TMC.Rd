@@ -5,7 +5,7 @@
 Print TMC object
 }
 \description{
-Print method for objects of class TMC
+Print method for objects of class TMC.
 }
 \usage{
 \method{print}{TMC}(x, \dots)
@@ -23,11 +23,7 @@ default arguments of print method
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+The form of the value returned by summary depends on the class of its argument. See the documentation of the particular methods for details of what is produced by that method.
 }
 \references{
 

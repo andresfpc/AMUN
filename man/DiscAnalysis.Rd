@@ -1,11 +1,10 @@
 \name{DiscAnalysis}
 \alias{DiscAnalysis}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Discriminant Analysis
 }
 \description{
-Sometimes it is required to assign an individual in one of many groups, to do that there consider the classification rule based on an index called lineal discriminate function, where different means but same covariance matrix are reasonable to assume (Morrison, 2005). This program computes the discriminate scores, the classification table and finally the wrong classification percentage
+Sometimes it is required to assign an individual in one of many groups, to do that there consider the classification rule based on an index called lineal discriminate function Morrison(2005). This program computes the discriminate scores, the classification table and finally the misclassification percentage.
 }
 \usage{
 DiscAnalysis(X)
@@ -20,11 +19,9 @@ a data matrix which last column must be the classification column
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\item{Score}{the value of the discriminate score}
+\item{ClassificationTable}{a table with the classification according with the discriminate score}
+\item{MisClassificationPerc}{Misclassification percentage}
 }
 \references{
 Morrison, D. F. (2005), Multivariate statistical methods, Series in Probabilty and Statistics, 4 edn, McGraw-Hill, New York.
